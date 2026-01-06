@@ -4,7 +4,6 @@ import '../styles/global.css';
 import Navigation from '../components/react/Navigation.tsx';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import ProjectTimeline from '../components/react/ProjectTimeline.tsx';
-import AIPlayground from '../components/react/AIPlayground.tsx';
 import OpportunityForm from '../components/react/OpportunityForm.tsx';
 import { Image } from 'astro:assets';
 import portrait from '../assets/profilovka_md.png';
@@ -15,7 +14,7 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 
 // Get English translations
 const lang = 'en';
-const { hero, highlightStats, skillClusters, timelineEntries, aiIdeas, contactLinks } = getTranslatedContent(lang);
+const { hero, highlightStats, skillClusters, timelineEntries, contactLinks } = getTranslatedContent(lang);
 const t = useTranslations(lang);
 
 // Map technology names to vocabulary page slugs
@@ -95,40 +94,37 @@ const techSlugMap: Record<string, string> = {
     </div>
   </section>
 
-  <section class="grid gap-6 lg:grid-cols-[2fr_1fr]">
-    <div class="surface-card space-y-6">
-      <div>
-        <p class="eyebrow">{t('section.enterpriseReact')}</p>
-        <h2 class="text-3xl font-semibold text-white">{t('section.systemsUsedDaily')}</h2>
-      </div>
-      <p class="text-lg text-slate-200" set:html={t('section.enterpriseDescription')
-        .replace(/React and TypeScript/g, '<a href="/vocabulary/react-typescript" class="keyword-highlight">React and TypeScript</a>')
-        .replace(/GraphQL/g, '<a href="/vocabulary/graphql-integration" class="keyword-highlight">GraphQL</a>')
-        .replace(/Material UI/g, '<a href="/vocabulary/material-ui-design-system" class="keyword-highlight">Material UI</a>')
-        .replace(/CI\/CD/g, '<a href="/vocabulary/docker-github-actions-cicd" class="keyword-highlight">CI/CD</a>')
-      }></p>
-      <ul class="grid gap-4 sm:grid-cols-3">
-        {skillClusters.map((cluster) => (
-          <li class="rounded-3xl border border-white/10 bg-white/5 p-4">
-            <p class="text-sm font-semibold text-white">{cluster.name}</p>
-            <ul class="mt-2 space-y-1 text-sm text-slate-300">
-              {cluster.bullets.map((item) => (
-                <li set:html={item
-                  .replace(/React, Next\.js & Gatsby/g, '<a href="/vocabulary/react-typescript" class="keyword-highlight">React</a>, <a href="/vocabulary/nextjs-enterprise" class="keyword-highlight">Next.js</a> & Gatsby')
-                  .replace(/Redux/g, '<a href="/vocabulary/redux-state-management" class="keyword-highlight">Redux</a>')
-                  .replace(/Formik/g, '<a href="/vocabulary/formik-multistep-forms" class="keyword-highlight">Formik</a>')
-                  .replace(/React Hook Form/g, '<a href="/vocabulary/react-hook-form" class="keyword-highlight">React Hook Form</a>')
-                  .replace(/Material UI/g, '<a href="/vocabulary/material-ui-design-system" class="keyword-highlight">Material UI</a>')
-                  .replace(/GraphQL/g, '<a href="/vocabulary/graphql-integration" class="keyword-highlight">GraphQL</a>')
-                  .replace(/PostgreSQL/g, '<a href="/vocabulary/postgresql-react" class="keyword-highlight">PostgreSQL</a>')
-                }></li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
+  <section class="surface-card space-y-6">
+    <div>
+      <p class="eyebrow">{t('section.enterpriseReact')}</p>
+      <h2 class="text-3xl font-semibold text-white">{t('section.systemsUsedDaily')}</h2>
     </div>
-    <AIPlayground client:visible ideas={aiIdeas} />
+    <p class="text-lg text-slate-200" set:html={t('section.enterpriseDescription')
+      .replace(/React and TypeScript/g, '<a href="/vocabulary/react-typescript" class="keyword-highlight">React and TypeScript</a>')
+      .replace(/GraphQL/g, '<a href="/vocabulary/graphql-integration" class="keyword-highlight">GraphQL</a>')
+      .replace(/Material UI/g, '<a href="/vocabulary/material-ui-design-system" class="keyword-highlight">Material UI</a>')
+      .replace(/CI\/CD/g, '<a href="/vocabulary/docker-github-actions-cicd" class="keyword-highlight">CI/CD</a>')
+    }></p>
+    <ul class="grid gap-4 sm:grid-cols-3">
+      {skillClusters.map((cluster) => (
+        <li class="rounded-3xl border border-white/10 bg-white/5 p-4">
+          <p class="text-sm font-semibold text-white">{cluster.name}</p>
+          <ul class="mt-2 space-y-1 text-sm text-slate-300">
+            {cluster.bullets.map((item) => (
+              <li set:html={item
+                .replace(/React, Next\.js & Gatsby/g, '<a href="/vocabulary/react-typescript" class="keyword-highlight">React</a>, <a href="/vocabulary/nextjs-enterprise" class="keyword-highlight">Next.js</a> & Gatsby')
+                .replace(/Redux/g, '<a href="/vocabulary/redux-state-management" class="keyword-highlight">Redux</a>')
+                .replace(/Formik/g, '<a href="/vocabulary/formik-multistep-forms" class="keyword-highlight">Formik</a>')
+                .replace(/React Hook Form/g, '<a href="/vocabulary/react-hook-form" class="keyword-highlight">React Hook Form</a>')
+                .replace(/Material UI/g, '<a href="/vocabulary/material-ui-design-system" class="keyword-highlight">Material UI</a>')
+                .replace(/GraphQL/g, '<a href="/vocabulary/graphql-integration" class="keyword-highlight">GraphQL</a>')
+                .replace(/PostgreSQL/g, '<a href="/vocabulary/postgresql-react" class="keyword-highlight">PostgreSQL</a>')
+              }></li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
   </section>
 
   <section id="projects" class="space-y-6">

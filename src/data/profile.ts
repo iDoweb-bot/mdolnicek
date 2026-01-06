@@ -17,7 +17,7 @@ export const hero = {
 export const highlightStats = [
   { label: 'Years in frontend', value: '8+' },
   { label: 'Enterprise portals delivered', value: '7' },
-  { label: 'Freelance since', value: '2012' }
+  { label: 'Freelance since', value: '2017' }
 ];
 
 export const skillClusters = [
@@ -82,7 +82,7 @@ export const timelineEntries = [
   },
   {
     id: 'osvc',
-    year: '2012 – present',
+    year: '2017 – present',
     title: 'Freelance web specialist',
     summary:
       'Operate a long-running web services practice delivering marketing sites, SEO support, e-commerce builds, and small game experiments.',

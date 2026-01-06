@@ -15,7 +15,7 @@ export const ui = {
     'nav.vocabulary': 'Vocabulary',
     'nav.projects': 'Projects',
     'nav.timeline': 'Timeline',
-    'nav.downloadCv': 'Download CV (CZ)',
+    'nav.downloadCv': 'Download CV',
     'hero.eyebrow': 'Frontend developer • React & TypeScript',
     'hero.title': 'Marek Dolníček',
     'hero.subtitle': 'Enterprise-ready React developer based in Prague.',
@@ -101,7 +101,7 @@ export const ui = {
     'nav.vocabulary': 'Slovník',
     'nav.projects': 'Projekty',
     'nav.timeline': 'Časová osa',
-    'nav.downloadCv': 'Stáhnout CV (CZ)',
+    'nav.downloadCv': 'Stáhnout CV',
     'hero.eyebrow': 'Frontend vývojář • React & TypeScript',
     'hero.title': 'Marek Dolníček',
     'hero.subtitle': 'Enterprise React vývojář se sídlem v Praze.',
@@ -187,7 +187,7 @@ export const ui = {
     'nav.vocabulary': 'Wortschatz',
     'nav.projects': 'Projekte',
     'nav.timeline': 'Zeitleiste',
-    'nav.downloadCv': 'Lebenslauf (CZ) herunterladen',
+    'nav.downloadCv': 'Lebenslauf herunterladen',
     'hero.eyebrow': 'Frontend-Entwickler • React & TypeScript',
     'hero.title': 'Marek Dolníček',
     'hero.subtitle': 'Enterprise-fähiger React-Entwickler mit Sitz in Prag.',
@@ -273,7 +273,7 @@ export const ui = {
     'nav.vocabulary': 'Vocabulario',
     'nav.projects': 'Proyectos',
     'nav.timeline': 'Línea de tiempo',
-    'nav.downloadCv': 'Descargar CV (CZ)',
+    'nav.downloadCv': 'Descargar CV',
     'hero.eyebrow': 'Desarrollador Frontend • React & TypeScript',
     'hero.title': 'Marek Dolníček',
     'hero.subtitle': 'Desarrollador React empresarial con sede en Praga.',
@@ -359,7 +359,7 @@ export const ui = {
     'nav.vocabulary': 'Vocabolario',
     'nav.projects': 'Progetti',
     'nav.timeline': 'Cronologia',
-    'nav.downloadCv': 'Scarica CV (CZ)',
+    'nav.downloadCv': 'Scarica CV',
     'hero.eyebrow': 'Sviluppatore Frontend • React & TypeScript',
     'hero.title': 'Marek Dolníček',
     'hero.subtitle': 'Sviluppatore React enterprise con sede a Praga.',
@@ -445,7 +445,7 @@ export const ui = {
     'nav.vocabulary': 'Vocabulaire',
     'nav.projects': 'Projets',
     'nav.timeline': 'Chronologie',
-    'nav.downloadCv': 'Télécharger le CV (CZ)',
+    'nav.downloadCv': 'Télécharger le CV',
     'hero.eyebrow': 'Développeur Frontend • React & TypeScript',
     'hero.title': 'Marek Dolníček',
     'hero.subtitle': 'Développeur React entreprise basé à Prague.',
@@ -555,7 +555,7 @@ export function getTranslatedContent(lang: keyof typeof ui) {
     highlightStats: [
       { label: t('stats.yearsInFrontend'), value: '8+' },
       { label: t('stats.enterprisePortals'), value: '7' },
-      { label: t('stats.freelanceSince'), value: '2012' }
+      { label: t('stats.freelanceSince'), value: '2017' }
     ],
     skillClusters: [
       {
@@ -621,7 +621,7 @@ export function getTranslatedContent(lang: keyof typeof ui) {
       },
       {
         id: 'osvc',
-        year: '2012 – present',
+        year: '2017 – present',
         title: t('timeline.osvc.title'),
         summary: t('timeline.osvc.summary'),
         stack: ['WordPress', 'SEO', 'E-commerce', 'HTML/CSS']

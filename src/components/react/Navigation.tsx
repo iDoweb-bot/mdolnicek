@@ -21,7 +21,7 @@ export default function Navigation({ currentPath = '/', lang }: NavigationProps)
     { label: t('nav.vocabulary'), href: `${langPrefix}/vocabulary` }
   ];
 
-  const extraItems = [{ label: t('nav.downloadCv'), href: '/CV_cs-2026.pdf' }];
+  const cvPdfPath = resolvedLang === 'cs' ? '/CV_dolnicek_2026_cz.pdf' : '/CV_dolnicek_2026_en.pdf';
 
   return (
     <>
@@ -36,15 +36,12 @@ export default function Navigation({ currentPath = '/', lang }: NavigationProps)
             {item.label}
           </a>
         ))}
-        {extraItems.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className="text-sm font-semibold text-slate-300 transition hover:text-accent"
-          >
-            {item.label}
-          </a>
-        ))}
+        <a
+          href={cvPdfPath}
+          className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-ink transition hover:bg-accentMuted"
+        >
+          {t('nav.downloadCv')}
+        </a>
       </nav>
 
       {/* Mobile Hamburger Button */}
@@ -88,16 +85,13 @@ export default function Navigation({ currentPath = '/', lang }: NavigationProps)
                 {item.label}
               </a>
             ))}
-            {extraItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-2xl font-semibold text-slate-200 transition hover:text-accent"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </a>
-            ))}
+            <a
+              href={cvPdfPath}
+              className="rounded-full bg-accent px-6 py-3 text-xl font-semibold text-ink transition hover:bg-accentMuted"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('nav.downloadCv')}
+            </a>
           </div>
         </div>
       )}
