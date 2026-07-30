@@ -5,6 +5,7 @@ import Navigation from '../components/react/Navigation.tsx';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import ProjectTimeline from '../components/react/ProjectTimeline.tsx';
 import OpportunityForm from '../components/react/OpportunityForm.tsx';
+import AIServices from '../components/AIServices.astro';
 import { Image } from 'astro:assets';
 import portrait from '../assets/profilovka_md.png';
 import { getCollection } from 'astro:content';
@@ -93,6 +94,8 @@ const techSlugMap: Record<string, string> = {
       ))}
     </div>
   </section>
+
+  <AIServices lang={lang} />
 
   <section class="surface-card space-y-6">
     <div>

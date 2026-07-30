@@ -16,6 +16,7 @@ export default function Navigation({ currentPath = '/', lang }: NavigationProps)
   const t = useTranslations(resolvedLang);
 
   const navItems = [
+    { label: t('nav.services'), href: `${langPrefix}/#services` },
     { label: t('nav.projects'), href: `${langPrefix}/projects` },
     { label: t('nav.timeline'), href: `${langPrefix}/#timeline` },
     { label: t('nav.vocabulary'), href: `${langPrefix}/vocabulary` }
@@ -70,10 +71,7 @@ export default function Navigation({ currentPath = '/', lang }: NavigationProps)
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-ink/95 sm:hidden"
-          onClick={() => setIsOpen(false)}
-        >
+        <div className="fixed inset-0 z-50 bg-ink/95 sm:hidden">
           <div className="flex min-h-screen flex-col items-center justify-center gap-8">
             {navItems.map((item) => (
               <a

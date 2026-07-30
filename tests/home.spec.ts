@@ -1,12 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Home page', () => {
-  test('surfaces hero, projects, and islands', async ({ page }) => {
-    await page.goto('/');
+test('presents AI consultation and integration services', async ({ page }) => {
+  await page.goto('/');
 
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Marek');
-    await expect(page.getByRole('link', { name: 'Book a pairing session' })).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2, name: /React-heavy surfaces/ })).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2, name: /Where React met AI curiosity/ })).toBeVisible();
-  });
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Marek');
+  await expect(page.getByRole('heading', { level: 2, name: 'Put AI to work in your real workflows' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'AI consultation & roadmap' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: 'AI integration & automation' })).toBeVisible();
+  await expect(page.getByText(/companies, product and service teams, agencies/)).toBeVisible();
 });
