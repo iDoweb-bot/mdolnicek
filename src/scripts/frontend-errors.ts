@@ -91,6 +91,11 @@ if (site) {
     originalConsoleError(...values);
   };
 
+  // ponytail: query-gated one-release smoke hook; remove after SigNoz verification.
+  if (new URLSearchParams(location.search).has('signoz-error-smoke')) {
+    setTimeout(() => { throw new Error('Intentional SigNoz frontend smoke test'); });
+  }
+
   const reportVital = (metric: Metric) => {
     const timestamp = nanoseconds(Date.now());
     sendSpan('frontend-performance', {
