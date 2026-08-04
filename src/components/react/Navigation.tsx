@@ -25,7 +25,15 @@ export default function Navigation({ currentPath = '/', lang }: NavigationProps)
   const cvPdfPath = resolvedLang === 'cs' ? '/CV_dolnicek_2026_cz.pdf' : '/CV_dolnicek_2026_en.pdf';
 
   return (
-    <>
+    <div className="flex items-center gap-6">
+      <a
+        href={`${langPrefix}/`}
+        aria-label="Marek Dolnicek home"
+        className="rounded-xl transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink"
+      >
+        <img src="/logo-md.svg" alt="" width="40" height="40" className="h-10 w-10 rounded-xl" />
+      </a>
+
       {/* Desktop Navigation */}
       <nav className="hidden items-center gap-6 sm:flex">
         {navItems.map((item) => (
@@ -93,6 +101,6 @@ export default function Navigation({ currentPath = '/', lang }: NavigationProps)
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
