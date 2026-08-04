@@ -29,9 +29,9 @@ export default function Navigation({ currentPath = '/', lang }: NavigationProps)
       <a
         href={`${langPrefix}/`}
         aria-label="Marek Dolnicek home"
-        className="rounded-xl transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink"
+        className="transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink"
       >
-        <img src="/logo-md.svg" alt="" width="40" height="40" className="h-10 w-10 rounded-xl" />
+        <img src="/logo-md.svg" alt="" width="56" height="28" className="h-7 w-14" />
       </a>
 
       {/* Desktop Navigation */}

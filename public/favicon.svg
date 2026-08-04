@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">MD</title>
+  <rect width="256" height="256" rx="40" fill="#0f172a"/>
+  <g transform="translate(24 76) scale(1.625)">
+    <path fill="#f8fafc" d="M4 56V8h12l16 24L48 8h12v48H48V28L32 51 16 28v28z"/>
+    <path fill="#5ef5c6" fill-rule="evenodd" d="M68 8h18c24 0 38 9 38 24S110 56 86 56H68zm12 11v26h6c17 0 26-4 26-13s-9-13-26-13z"/>
+  </g>
+</svg>
