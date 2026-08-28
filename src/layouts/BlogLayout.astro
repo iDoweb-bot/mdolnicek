@@ -18,7 +18,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 ---
 
 <BaseLayout title={`${title} | Blog`} description={description}>
-  <article class="mx-auto max-w-3xl space-y-8">
+  <article class="mx-auto max-w-3xl space-y-8 rounded-3xl border border-white/10 bg-slate-900/80 p-6 sm:p-10 backdrop-blur-md shadow-card">
     <nav aria-label="Breadcrumb" class="text-sm text-slate-400">
       <a href="/" class="hover:text-accent">Home</a> → <a href="/blog" class="hover:text-accent">Blog</a> → <span class="text-slate-200">{title}</span>
     </nav>
