@@ -12,13 +12,21 @@
 
   body {
     @apply bg-slate-900 text-slate-100 antialiased;
-    background-image:
+    min-height: 100vh;
+  }
+
+  /* ponytail: fixed gradient via pseudo-element instead of background-attachment:fixed
+     (ignored on iOS Safari, causes gradient to scroll with content) */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
       radial-gradient(circle at 12% 8%, rgba(94, 245, 198, 0.2), transparent 32rem),
       radial-gradient(circle at 88% 22%, rgba(56, 189, 248, 0.1), transparent 28rem),
       radial-gradient(circle at 50% 55%, rgba(45, 212, 191, 0.07), transparent 38rem),
       linear-gradient(155deg, #020617 0%, #0b1d29 42%, #08111f 72%, #020617 100%);
-    background-attachment: fixed;
-    min-height: 100vh;
   }
 
   main > section {
