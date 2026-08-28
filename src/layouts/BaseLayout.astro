@@ -42,9 +42,9 @@ const lang = explicitLang || (urlLang && urlLang in languages ? urlLang : 'en');
     <link rel="alternate" type="application/rss+xml" title="Blog | Marek Dolníček" href="/blog/rss.xml" />
     <script src="../scripts/frontend-errors.ts"></script>
   </head>
-  <body class="min-h-screen px-6 pb-16 pt-6 text-base text-slate-100 sm:px-10 lg:px-16">
+  <body class="min-h-screen px-4 pb-8 pt-4 text-sm text-slate-100 sm:px-8 sm:pb-12 sm:pt-6 sm:text-base lg:px-16">
     <!-- Navigation Header -->
-    <div class="mx-auto flex max-w-6xl items-center justify-between pb-6">
+    <div class="mx-auto flex max-w-6xl items-center justify-between pb-4 sm:pb-6">
       <slot name="navigation">
         <!-- Default: empty, can be filled by pages that want the navbar -->
       </slot>
@@ -53,7 +53,7 @@ const lang = explicitLang || (urlLang && urlLang in languages ? urlLang : 'en');
       </slot>
     </div>
 
-    <main class="mx-auto flex max-w-6xl flex-col gap-12">
+    <main class="mx-auto flex max-w-6xl flex-col gap-8 sm:gap-12">
       <slot />
     </main>
   </body>
