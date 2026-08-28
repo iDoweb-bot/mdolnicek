@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const projects = defineCollection({
   type: 'content',
@@ -12,4 +13,15 @@ const projects = defineCollection({
   })
 });
 
-export const collections = { projects };
+const blog = defineCollection({
+  loader: glob({ pattern: '[^_]*.{md,mdx}', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().max(160),
+    pubDate: z.coerce.date(),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
+  })
+});
+
+export const collections = { projects, blog };

@@ -54,3 +54,5 @@ Thumbs.db
 
 # AI
 .codex/
+test-results/
+pnpm-workspace.yaml

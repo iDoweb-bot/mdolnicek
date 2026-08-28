@@ -18,6 +18,7 @@ export default function Navigation({ currentPath = '/', lang }: NavigationProps)
   const navItems = [
     { label: t('nav.services'), href: `${langPrefix}/#services` },
     { label: t('nav.projects'), href: `${langPrefix}/projects` },
+    { label: t('nav.blog'), href: `${langPrefix}/blog` },
     { label: t('nav.timeline'), href: `${langPrefix}/#timeline` },
     { label: t('nav.vocabulary'), href: `${langPrefix}/vocabulary` }
   ];
